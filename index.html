@@ -474,8 +474,10 @@ document.getElementById('submitBtn').addEventListener('click', async ()=>{
   const c1 = document.getElementById('c1').checked;
   const c2 = document.getElementById('c2').checked;
   const c3 = document.getElementById('c3').checked;
+  const finalConsent =
+  document.querySelector('input[name="finalConsent"]:checked')?.value || '';
 
-  if(childRows.length === 0 || !parentName || !relationship || !email || !hasSignature){
+  if(childRows.length === 0 || !parentName || !relationship || !email ||   !finalConsent || !hasSignature){
     errBox.classList.add('show');
     errBox.scrollIntoView({behavior:'smooth', block:'center'});
     return;
@@ -530,7 +532,23 @@ document.getElementById('submitBtn').addEventListener('click', async ()=>{
   doc.text((c1 ? '[X] ' : '[  ] ') + 'Classroom & printed materials', left, y); y += 18;
   doc.text((c2 ? '[X] ' : '[  ] ') + 'Official social media', left, y); y += 18;
   doc.text((c3 ? '[X] ' : '[  ] ') + 'Website', left, y); y += 30;
+ensureSpace(80);
+doc.setFont('helvetica','bold');
+doc.setFontSize(12);
+doc.text('Final Consent', left, y);
+y += 18;
 
+doc.setFont('helvetica','normal');
+doc.setFontSize(11);
+
+const consentText =
+  finalConsent === 'agree'
+    ? 'I Agree'
+    : 'I Do Not Agree';
+
+doc.text(consentText, left, y);
+y += 30;
+  
   ensureSpace(100);
   doc.setFont('helvetica','bold'); doc.setFontSize(12);
   doc.text('Signature', left, y); y += 14;
@@ -561,12 +579,21 @@ document.getElementById('submitBtn').addEventListener('click', async ()=>{
   try{
     const pdfBase64 = doc.output('datauristring').split(',')[1];
     const payload = {
-      fileName,
-      pdfBase64,
-      parentName, relationship, email, phone, date,
-      children: childRows,
-      permissions: { classroomPrint: c1, socialMedia: c2, website: c3 }
-    };
+  fileName,
+  pdfBase64,
+  parentName,
+  relationship,
+  email,
+  phone,
+  date,
+  finalConsent,
+  children: childRows,
+  permissions: {
+    classroomPrint: c1,
+    socialMedia: c2,
+    website: c3
+  }
+};
     const res = await fetch(BACKEND_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // avoids CORS preflight
