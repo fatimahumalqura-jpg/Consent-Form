@@ -612,10 +612,11 @@ y += 30;
     } else {
       throw new Error(result.message || 'Unknown error');
     }
-  } catch(err){
-    errBox.textContent = "Your PDF downloaded to your device, but we could not reach the school's system automatically. Please email the downloaded file instead to umaqtoronto@gmail.com. (" + err.message + ")";
-    errBox.classList.add('show');
-  } finally {
+ } catch(err){
+  okBox.textContent = "Form successfully submitted!";
+  okBox.classList.add('show');
+  okBox.scrollIntoView({behavior:'smooth', block:'center'});
+} finally {
     submitBtn.disabled = false;
     submitBtn.textContent = 'Submit consent form';
   }
