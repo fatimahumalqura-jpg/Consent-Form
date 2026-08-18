@@ -307,6 +307,33 @@
       </div>
       <div class="note">Leaving a box unchecked means that permission is <strong>not</strong> granted. These permissions apply to all children listed above. You can grant some permissions and not others.</div>
     </div>
+    <div class="field full">
+  <label><span class="req">*</span> Consent Declaration</label>
+
+  <div class="consent-row">
+    <input type="radio" id="agree" name="finalConsent" value="agree" required>
+    <div>
+      <div class="ctitle">I Agree</div>
+      <div class="cdesc">
+        I have read and understood this Photography & Social Media Consent Form,
+        and I voluntarily give permission for Um Al Qura Islamic School to use
+        photographs and/or videos of my child(ren) according to the permissions I
+        have selected above.
+      </div>
+    </div>
+  </div>
+
+  <div class="consent-row">
+    <input type="radio" id="disagree" name="finalConsent" value="disagree">
+    <div>
+      <div class="ctitle">I Do Not Agree</div>
+      <div class="cdesc">
+        I do not give permission for Um Al Qura Islamic School to use photographs
+        or videos of my child(ren) for the purposes described in this form.
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="part">
       <div class="part-label"><span class="part-num">4</span><span class="part-title">Signature</span></div>
@@ -378,33 +405,7 @@ function renumberChildren(){
 
 document.getElementById('addChildBtn').addEventListener('click', addChildRow);
 addChildRow(); // start with one child row
-  <div class="field full">
-  <label><span class="req">*</span> Consent Declaration</label>
-
-  <div class="consent-row">
-    <input type="radio" id="agree" name="finalConsent" value="agree" required>
-    <div>
-      <div class="ctitle">I Agree</div>
-      <div class="cdesc">
-        I have read and understood this Photography & Social Media Consent Form,
-        and I voluntarily give permission for Um Al Qura Islamic School to use
-        photographs and/or videos of my child(ren) according to the permissions I
-        have selected above.
-      </div>
-    </div>
-  </div>
-
-  <div class="consent-row">
-    <input type="radio" id="disagree" name="finalConsent" value="disagree">
-    <div>
-      <div class="ctitle">I Do Not Agree</div>
-      <div class="cdesc">
-        I do not give permission for Um Al Qura Islamic School to use photographs
-        or videos of my child(ren) for the purposes described in this form.
-      </div>
-    </div>
-  </div>
-</div>
+  
 
 // ---- Signature pad ----
 const canvas = document.getElementById('sigPad');
