@@ -368,7 +368,7 @@
 // ====== CONFIGURATION ======
 // Paste your deployed Google Apps Script Web App URL here (ends in /exec).
 // See SETUP.md for how to get this.
-const BACKEND_URL = "https://script.google.com/macros/s/AKfycbytoQxNbqSBPyYdiMiKcM6fAaxJzZ37jhzEWtygDbIm1nyffgVo8fi78AJDxf5vl5qqxg/exec";
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycbxDb-OrXoXl60VbKcHsDe68aGQ8xXVsAhgWZt87BiWVL1UTTHe8fDPjEmTBWCOj11uiQA/exec";
 const ORG_NAME = "Um Al Qura Islamic School";
 // ============================
 
@@ -613,7 +613,7 @@ y += 30;
       throw new Error(result.message || 'Unknown error');
     }
   } catch(err){
-    errBox.textContent = "Your PDF downloaded to your device, but we could not reach the school's system automatically. Please email the downloaded file instead. (" + err.message + ")";
+    errBox.textContent = "Your PDF downloaded to your device, but we could not reach the school's system automatically. Please email the downloaded file instead to umaqtoronto@gmail.com. (" + err.message + ")";
     errBox.classList.add('show');
   } finally {
     submitBtn.disabled = false;
