@@ -318,7 +318,7 @@
       <div class="ctitle">I Agree</div>
       <div class="cdesc">
         I have read and understood this Photography & Social Media Consent Form.
-        I voluntarily grant permission for Um Al Qura Islamic School to use
+        I grant permission for Um Al Qura Islamic School to use
         photographs and/or videos of my child(ren) in accordance with the
         permissions I have selected above.
       </div>
@@ -328,9 +328,11 @@
   <div class="consent-row">
     <input type="radio" id="disagree" name="finalConsent" value="disagree">
     <div>
-      <div class="ctitle">I do not grant permission for Um Al Qura Islamic School to use
-        photographs or videos of my child(ren) for any of the purposes
-        described in this consent form.</div>
+      <div class="ctitle">I DO NOT AGREE</div>
+           <div class="cdesc">
+       I do not grant permission for Um Al Qura Islamic School to use photographs or videos of my child(ren) 
+       for any of the purposes described in this consent form.
+      </div>
           </div>
   </div>
 
@@ -540,8 +542,11 @@ doc.setFontSize(11);
 
 const consentText =
   finalConsent === 'agree'
-    ? 'I Agree'
-    : 'I Do Not Agree';
+    ? 'I have read and understood this Photography & Social Media Consent Form.
+        I grant permission for Um Al Qura Islamic School to use
+        photographs and/or videos of my child(ren) to use it in their social media'
+    : 'I do not grant permission for Um Al Qura Islamic School to use photographs or videos of my child(ren) 
+       for any of the purposes described in this consent form.';
 
 doc.text(consentText, left, y);
 y += 30;
