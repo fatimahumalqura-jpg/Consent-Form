@@ -307,18 +307,20 @@
       </div>
       <div class="note">Leaving a box unchecked means that permission is <strong>not</strong> granted. These permissions apply to all children listed above. You can grant some permissions and not others.</div>
     </div>
+  <div class="part">
+    <div class="part-label"><span class="part-num">4</span><span class="part-title">Consent</span></div>
     <div class="field full">
-  <label><span class="req">*</span> Consent Declaration</label>
+  <label><span class="req">*</span> Final Consent</label>
 
   <div class="consent-row">
     <input type="radio" id="agree" name="finalConsent" value="agree" required>
     <div>
       <div class="ctitle">I Agree</div>
       <div class="cdesc">
-        I have read and understood this Photography & Social Media Consent Form,
-        and I voluntarily give permission for Um Al Qura Islamic School to use
-        photographs and/or videos of my child(ren) according to the permissions I
-        have selected above.
+        I have read and understood this Photography & Social Media Consent Form.
+        I voluntarily grant permission for Um Al Qura Islamic School to use
+        photographs and/or videos of my child(ren) in accordance with the
+        permissions I have selected above.
       </div>
     </div>
   </div>
@@ -328,15 +330,19 @@
     <div>
       <div class="ctitle">I Do Not Agree</div>
       <div class="cdesc">
-        I do not give permission for Um Al Qura Islamic School to use photographs
-        or videos of my child(ren) for the purposes described in this form.
+        I do not grant permission for Um Al Qura Islamic School to use
+        photographs or videos of my child(ren) for any of the purposes
+        described in this consent form.
       </div>
     </div>
   </div>
-</div>
 
+  <p class="note">
+    By selecting one of the options above and signing below, I confirm that I am the parent or legal guardian of the child(ren) listed on this form.
+  </p>
+</div>
     <div class="part">
-      <div class="part-label"><span class="part-num">4</span><span class="part-title">Signature</span></div>
+      <div class="part-label"><span class="part-num">5</span><span class="part-title">Signature</span></div>
       <div class="sig-wrap">
         <div class="sig-instructions">sign here, right on the line &#8618;</div>
         <canvas id="sigPad"></canvas>
@@ -362,7 +368,7 @@
 // ====== CONFIGURATION ======
 // Paste your deployed Google Apps Script Web App URL here (ends in /exec).
 // See SETUP.md for how to get this.
-const BACKEND_URL = "https://script.google.com/macros/s/AKfycbyF8Ge8fdfFPgoRGyTxplz0AxFtWqYsJ2mbTvzpYygoqzPqwBwh3CXeYaw1wJrFN8hAlg/exec";
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycbytoQxNbqSBPyYdiMiKcM6fAaxJzZ37jhzEWtygDbIm1nyffgVo8fi78AJDxf5vl5qqxg/exec";
 const ORG_NAME = "Um Al Qura Islamic School";
 // ============================
 
